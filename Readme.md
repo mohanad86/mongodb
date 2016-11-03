@@ -9,8 +9,31 @@ First start to connect to the database
 - mongo localhost:54321
   
 
+### Commands for mongoDB
 
+```sh
+$ show dbs
+$ use selected.db
+$ show tables
+```
 
+### Delete the database or tables
+
+```sh
+$ db.test.drop()
+$ db.test.dropDatabase()
+```
+### Find and count data into the database
+
+```sh
+$ db.test.count();
+$ db.test.find();
+```
+
+### Count by exacte name
+```sh
+$ db.test.find({"name":"Tom"}).count()
+```
 
 Author: Mohanad Aly
 
