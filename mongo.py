@@ -9,13 +9,17 @@ clients.find()
 
 
 
-for k in range(6000):
+for k in range(2000):
     clients = db.clients.insert({"birthdate":"1970-01-01"});
 print (k)
 
-for l in range(6000):
+for l in range(4000):
     clients = db.clients.insert({"birthdate":"1995-01-01"});
 print(l)
+
+for f in range(2000):
+    clients = db.clients.insert({"birthdate":"1992-01-01"});
+print(f)
 
 for i in range(100):
    clients = db.clients.insert({"name":"Tom"});
@@ -26,6 +30,8 @@ for j in range(100):
 print(j)
 
 
+print (db.clients.find({"birthdate":{"$lt":"1990-01-01"}}).count())
+print (db.clients.find({"birthdate":{"$gt":"1980-01-01"}}).count())
 
 print(db.clients.count())
 
